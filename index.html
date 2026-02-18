@@ -3,284 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Barber Studio | Rolex Signature Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <title>Elite Barber Studio | Rolex Signature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --r-green: #006039; 
-            --r-green-dark: #004529;
+            --r-green: #006039;
+            --r-green-dark: #004d2e;
             --r-gold: #a37e2c;
-            --r-gold-light: #c5a059;
+            --r-gold-light: #d4af37;
             --white: #ffffff;
-            --ivory: #f8f6f2;
-            --text: #1c1c1c;
-            --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
-            --shadow-hard: 0 20px 40px rgba(0,0,0,0.12);
+            --ivory: #fcfaf5;
+            --glass: rgba(255, 255, 255, 0.95);
+            --shadow-premium: 0 20px 40px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        /* Reset y Base */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--ivory);
-            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png"); /* Textura papel */
-            color: var(--text);
+            color: #1a1a1a;
+            line-height: 1.6;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        /* Navegación de Alta Gama */
+        /* --- NAVEGACIÓN --- */
         nav {
             position: fixed;
-            width: 100%;
-            top: 0;
+            width: 94%;
+            left: 3%;
+            top: 25px;
             z-index: 1000;
-            padding: 25px 8%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 18px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.01);
-            transition: 0.5s;
-        }
-
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 8%;
-            box-shadow: var(--shadow-soft);
+            border-radius: 15px;
+            border: 1px solid rgba(163, 126, 44, 0.15);
+            box-shadow: var(--shadow-premium);
         }
 
         .logo {
             font-family: 'Cinzel', serif;
-            font-weight: 900;
             font-size: 1.4rem;
-            letter-spacing: 3px;
-            color: var(--r-green);
+            background: linear-gradient(135deg, var(--r-green), var(--r-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            letter-spacing: 2px;
         }
 
-        /* Hero Moderno */
+        /* --- HERO --- */
         .hero {
             height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), 
-                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            padding: 0 5%;
+        }
+
+        .hero-card {
+            background: var(--glass);
+            padding: 60px 40px;
+            border-radius: 25px;
+            max-width: 850px;
             text-align: center;
-            color: white;
-            padding: 0 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            border: 1px solid white;
+            animation: heroFade 1s ease-out;
         }
 
-        .hero-content { max-width: 900px; animation: fadeInUp 1.5s ease; }
-        .hero-content span { font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--r-gold-light); }
-        .hero-content h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 5rem); margin: 20px 0; font-weight: 700; line-height: 1; }
-        
-        .cta-box {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            margin-top: 40px;
+        @keyframes heroFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Botones Profesionales */
-        .btn-gold {
-            background: linear-gradient(135deg, var(--r-gold) 0%, var(--r-gold-light) 100%);
+        .hero-card h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--r-green);
+            margin-bottom: 25px;
+            font-weight: 900;
+        }
+
+        .hero-card p {
+            font-weight: 700;
+            color: var(--r-gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .steps-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 35px 0;
+        }
+
+        .step {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--r-green);
+            border: 1px solid rgba(163, 126, 44, 0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            text-transform: uppercase;
+        }
+
+        /* --- BOTONES PROFESIONALES --- */
+        .btn-main {
+            background: linear-gradient(135deg, var(--r-green) 0%, var(--r-green-dark) 100%);
             color: white;
-            padding: 18px 45px;
-            border-radius: 5px;
+            padding: 20px 50px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             display: inline-block;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(163, 126, 44, 0.3);
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(0, 96, 57, 0.2);
+            border: none;
+            cursor: pointer;
         }
 
-        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(163, 126, 44, 0.5); }
-
-        /* Secciones */
-        section { padding: 120px 10%; }
-        .section-tag { color: var(--r-gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; display: block; text-align: center; margin-bottom: 15px; }
-        .section-title { font-family: 'Cinzel', serif; font-size: 3rem; text-align: center; margin-bottom: 60px; color: var(--r-green); }
-
-        /* Catálogo Grid */
-        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .service-card {
-            background: white;
-            border-radius: 0;
-            overflow: hidden;
-            transition: 0.5s;
-            border: 1px solid #eee;
-            position: relative;
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 96, 57, 0.3);
+            filter: brightness(1.1);
         }
-        .service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hard); }
-        .service-img { width: 100%; height: 400px; object-fit: cover; filter: sepia(20%); transition: 0.5s; }
-        .service-card:hover .service-img { filter: sepia(0%); }
-        .service-info { padding: 30px; text-align: center; }
-        .service-info h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 10px; }
-        .price { font-size: 1.4rem; color: var(--r-green); font-weight: 400; display: block; margin-bottom: 20px; }
 
-        /* Apartado Referencias (Portafolio) */
-        .references { background: var(--white); }
-        .portfolio-grid {
+        /* --- SERVICIOS --- */
+        section { padding: 100px 10%; }
+        .section-title h2 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 2.5rem; 
+            color: var(--r-green); 
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            max-height: 600px;
-            overflow: hidden;
-            transition: max-height 1s ease-in-out;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-        .portfolio-grid.expanded { max-height: 2000px; }
-        .portfolio-item { position: relative; overflow: hidden; height: 300px; }
-        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .portfolio-item:hover img { transform: scale(1.1); }
 
-        /* Ubicación & Mapa */
-        .location-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: white;
-            box-shadow: var(--shadow-hard);
+        .card {
+            background: var(--white);
             border-radius: 20px;
             overflow: hidden;
+            box-shadow: var(--shadow-premium);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
         }
-        .location-info { padding: 60px; background: var(--r-green); color: white; }
-        .map-box { min-height: 400px; background: #e5e3df; }
 
-        /* Footer */
-        footer { padding: 80px 10% 40px; background: #1a1a1a; color: #888; text-align: center; }
+        .card:hover { transform: translateY(-10px); }
+        .card-img { width: 100%; height: 380px; object-fit: cover; }
+        .card-content { padding: 30px; text-align: center; }
+        .card-content h3 { font-family: 'Cinzel', serif; font-size: 1.4rem; margin-bottom: 10px; }
+        .card-price { font-size: 1.5rem; color: var(--r-gold); font-weight: 800; margin-bottom: 20px; display: block; }
 
-        /* Mobile Adjustments */
+        /* --- REFERENCIAS DESPLEGABLES --- */
+        .references-container { max-width: 1100px; margin: 0 auto; }
+        .accordion-item {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-premium);
+            overflow: hidden;
+        }
+        .accordion-header {
+            padding: 30px 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+        }
+        .accordion-header h3 { font-family: 'Cinzel', serif; color: var(--r-green); letter-spacing: 2px; }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 40px;
+        }
+        .accordion-content img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            transition: 0.3s;
+        }
+
+        /* --- UBICACIÓN --- */
+        .location-section {
+            background: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow-premium);
+            margin-top: 50px;
+        }
+        .loc-text { padding: 50px; }
+        .map-container { height: 450px; width: 100%; }
+
+        /* --- WHATSAPP --- */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 2000;
+            text-decoration: none;
+        }
+
         @media (max-width: 768px) {
-            .location-container { grid-template-columns: 1fr; }
-            .section-title { font-size: 2.2rem; }
-            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-            nav { padding: 20px 5%; }
-            .hero-content h1 { font-size: 3rem; }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            .location-section { grid-template-columns: 1fr; }
+            .accordion-content { grid-template-columns: 1fr 1fr; }
+            section { padding: 60px 5%; }
+            nav { padding: 15px 20px; width: 90%; left: 5%; }
         }
     </style>
 </head>
 <body>
 
-    <nav id="navbar">
-        <div class="logo">ELITE STUDIO</div>
-        <div class="menu-icon"><i class="fa-solid fa-ellipsis-vertical" style="color: var(--r-gold);"></i></div>
+    <nav>
+        <div class="logo">ELITE BARBER STUDIO</div>
+        <div style="color: var(--r-gold); font-weight: 700; font-size: 0.7rem; letter-spacing: 2px;">EST. 2026</div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <span>The Gold Standard in Grooming</span>
-            <h1>Corte de Autor & Barbería Fina</h1>
-            <div class="cta-box">
-                <p style="margin-bottom: 20px; font-weight: 300; letter-spacing: 1px;">Dinos día, hora y estilo. Nosotros nos encargamos del resto.</p>
-                <a href="#booking" class="btn-gold">AGENDAR EN 60s</a>
+        <div class="hero-card">
+            <p>Experiencia Signature</p>
+            <h1>Agenda tu cita en menos de 60 segundos</h1>
+            <div class="steps-box">
+                <div class="step">Dinos el día</div>
+                <div class="step">Elige la hora</div>
+                <div class="step">Elige el corte</div>
+                <div class="step">Agendamos</div>
             </div>
+            <button onclick="scrollToSection('catalogo')" class="btn-main">RESERVAR AHORA</button>
         </div>
     </header>
 
-    <section id="catalog-section">
-        <span class="section-tag">Colección Signature</span>
-        <h2 class="section-title">Nuestros Servicios</h2>
-        <div class="catalog">
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80" class="service-img">
-                <div class="service-info">
+    <section id="catalogo">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+        </div>
+        <div class="catalog-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1599351431247-f10b21816381?auto=format&fit=crop&q=80" class="card-img">
+                <div class="card-content">
                     <h3>Executive Fade</h3>
-                    <span class="price">$35.00</span>
-                    <button onclick="book('Executive Fade', '35')" class="btn-gold" style="width: 100%; border-radius: 0;">RESERVAR</button>
+                    <span class="card-price">$350 MXN</span>
+                    <button onclick="booking('Executive Fade', '350')" class="btn-main" style="width: 100%">ELEGIR CORTE</button>
                 </div>
             </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1599351431247-f10b21816381?auto=format&fit=crop&q=80" class="service-img">
-                <div class="service-info">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80" class="card-img">
+                <div class="card-content">
                     <h3>Imperial Beard</h3>
-                    <span class="price">$25.00</span>
-                    <button onclick="book('Imperial Beard', '25')" class="btn-gold" style="width: 100%; border-radius: 0;">RESERVAR</button>
-                </div>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80" class="service-img">
-                <div class="service-info">
-                    <h3>The Royal Ritual</h3>
-                    <span class="price">$55.00</span>
-                    <button onclick="book('The Royal Ritual', '55')" class="btn-gold" style="width: 100%; border-radius: 0;">RESERVAR</button>
+                    <span class="card-price">$250 MXN</span>
+                    <button onclick="booking('Imperial Beard', '250')" class="btn-main" style="width: 100%">ELEGIR CORTE</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="references">
-        <span class="section-tag">Portafolio</span>
-        <h2 class="section-title">Trabajos Recientes</h2>
-        <div class="portfolio-grid" id="portfolio">
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1593702288056-f6b8f3f3c5f9?auto=format&fit=crop&q=80"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1622286332618-f2803b414273?auto=format&fit=crop&q=80"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1536520142421-41e179c3d262?auto=format&fit=crop&q=80"></div>
-        </div>
-        <div style="text-align: center; margin-top: 40px;">
-            <button onclick="togglePortfolio()" id="btn-more" class="btn-gold" style="background: transparent; border: 1px solid var(--r-gold); color: var(--r-gold);">VER TODAS LAS REFERENCIAS</button>
-        </div>
-    </section>
-
-    <section id="location">
-        <div class="location-container">
-            <div class="location-info">
-                <span style="color: var(--r-gold-light); letter-spacing: 2px;">VISÍTANOS</span>
-                <h2 style="font-family: 'Cinzel', serif; font-size: 2.5rem; margin: 20px 0;">Elite HQ</h2>
-                <p style="opacity: 0.8; margin-bottom: 30px;">Calle Lujo #123, Distrito de la Moda.<br>Ciudad Elite, 90210.</p>
-                <div style="margin-bottom: 30px;">
-                    <p><strong>L - V:</strong> 10:00 - 20:00</p>
-                    <p><strong>S:</strong> 09:00 - 18:00</p>
+    <section id="referencias">
+        <div class="references-container">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion()">
+                    <h3>REFERENCIAS Y TRABAJOS</h3>
+                    <i class="fas fa-plus" id="acc-icon" style="color: var(--r-gold);"></i>
                 </div>
-                <a href="https://maps.google.com" target="_blank" class="btn-gold" style="background: white; color: var(--r-green);">COMO LLEGAR</a>
-            </div>
-            <div class="map-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.642957193294!2d-100.3541249!3d25.6831414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bd893699c80d%3A0xc6a89efb36873551!2sBarberia!5e0!3m2!1ses-419!2smx!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="accordion-content" id="acc-content">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1622286332618-f2803b414273?auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1593702288056-f6b8f3f3c5f9?auto=format&fit=crop&q=80">
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p style="font-family: 'Cinzel', serif; color: white; margin-bottom: 20px; font-size: 1.2rem;">ELITE BARBER STUDIO</p>
-        <p>© 2026. Todos los derechos reservados. Diseñado por ProWeb Agency.</p>
+    <section id="ubicacion">
+        <div class="section-title"><h2>Ubicación</h2></div>
+        <div class="location-section">
+            <div class="loc-text">
+                <h3 style="font-family: 'Cinzel'; color: var(--r-green); margin-bottom: 20px;">Visítanos en el Studio</h3>
+                <p style="margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--r-gold);"></i> Av. Paseo de la Reforma 123, CDMX</p>
+                <p style="margin-bottom: 30px;"><i class="fas fa-clock" style="color: var(--r-gold);"></i> Lun - Sáb: 10AM - 8PM</p>
+                <a href="https://maps.google.com" target="_blank" class="btn-main" style="background: white; color: var(--r-green); border: 1px solid var(--r-green);">VER EN GOOGLE MAPS</a>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4844391696414!2d-99.1674033!3d19.4270245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6ad9965ef944589!2sAngel%20de%20la%20Independencia!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--r-green-dark); color: white; text-align: center; padding: 60px 10%;">
+        <p style="font-family: 'Cinzel'; letter-spacing: 2px;">ELITE BARBER STUDIO</p>
+        <p style="font-size: 0.7rem; opacity: 0.6; margin-top: 20px;">© 2026. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        // Efecto scroll en Navbar
-        window.addEventListener('scroll', function() {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
+    <a href="https://wa.me/521234567890" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-        // Toggle Portfolio
-        function togglePortfolio() {
-            const p = document.getElementById('portfolio');
-            const b = document.getElementById('btn-more');
-            p.classList.toggle('expanded');
-            b.innerText = p.classList.contains('expanded') ? "VER MENOS" : "VER TODAS LAS REFERENCIAS";
+    <script>
+        function toggleAccordion() {
+            const content = document.getElementById('acc-content');
+            const icon = document.getElementById('acc-icon');
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.className = "fas fa-plus";
+            } else {
+                content.style.maxHeight = "1000px";
+                icon.className = "fas fa-minus";
+            }
         }
 
-        // WhatsApp Booking
-        function book(service, price) {
-            const phone = "521234567890";
-            const text = `Hola Elite Barber Studio, me gustaría agendar una cita VIP:%0A%0A*Servicio:* ${service}%0A*Costo:* $${price}%0A*Día y Hora:* [Escribe aquí tu preferencia]`;
-            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function booking(servicio, precio) {
+            const msj = `Hola! Quiero agendar:%0A*Corte:* ${servicio}%0A*Precio:* ${precio}%0A¿Qué horarios tienen disponibles?`;
+            window.open(`https://wa.me/521234567890?text=${msj}`, '_blank');
         }
     </script>
 </body>
