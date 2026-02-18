@@ -3,324 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Barber Studio | Rolex Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Elite Barber Studio | Rolex Signature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --rolex-green: #006039;
-            --rolex-gold: #a37e2c;
-            --soft-gold: #d4af37;
-            --ivory: #ffffff;
-            --off-white: #f4f4f4;
-            --deep-black: #1a1a1a;
-            --shadow-lux: 0 20px 50px rgba(0,0,0,0.1);
+            --r-green: #006039; /* Rolex Green */
+            --r-green-dark: #004d2e;
+            --r-gold: #a37e2c; /* Rolex Gold */
+            --r-gold-light: #d4af37;
+            --white: #ffffff;
+            --ivory: #fcfaf5;
+            --glass: rgba(255, 255, 255, 0.9);
+            --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
 
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--ivory);
-            color: var(--deep-black);
+            color: #1a1a1a;
+            line-height: 1.6;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        /* --- NAVEGACIÓN ESTILO IPHONE --- */
+        /* --- NAVEGACIÓN ESTILO CRISTAL --- */
         nav {
             position: fixed;
-            width: 94%;
-            left: 3%;
-            top: 15px;
+            width: 92%;
+            left: 4%;
+            top: 20px;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            padding: 12px 25px;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 96, 57, 0.1);
-            box-shadow: var(--shadow-lux);
+            border-radius: 100px;
+            border: 1px solid rgba(163, 126, 44, 0.2);
+            box-shadow: var(--shadow-premium);
         }
 
         .logo {
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            color: var(--rolex-green);
-            letter-spacing: 2px;
+            font-size: 1.3rem;
+            background: linear-gradient(to right, var(--r-green), var(--r-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
         }
 
-        /* --- HERO PREMIUM --- */
+        /* --- HERO: IMPACTO TOTAL --- */
         .hero {
-            height: 90vh;
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(244,244,244,0.5) 100%),
-                        url('https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80');
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)),
+                url('https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero-card {
+            background: var(--glass);
+            padding: 50px 30px;
+            border-radius: 40px;
+            max-width: 800px;
             text-align: center;
-            padding: 20px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+            border: 1px solid white;
+            animation: heroFade 1.2s ease-out;
         }
 
-        .hero-content h1 {
+        @keyframes heroFade {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hero-card h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            color: var(--rolex-green);
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            color: var(--r-green);
+            line-height: 1.1;
             margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
         }
 
-        .hero-content p {
-            font-size: 1.1rem;
-            letter-spacing: 3px;
+        .hero-card p {
+            font-weight: 600;
+            color: var(--r-gold);
             text-transform: uppercase;
-            color: var(--rolex-gold);
-            margin-bottom: 35px;
-            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
-        /* --- CATALOGO: SCROLL HORIZONTAL EN MOVIL --- */
-        section { padding: 80px 5%; }
+        .steps-box {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
 
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; color: var(--rolex-green); }
+        .step {
+            background: var(--ivory);
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 1px dashed var(--r-gold);
+        }
 
-        .catalog-container {
+        /* --- BOTONES CON BRILLO --- */
+        .btn-main {
+            background: linear-gradient(135deg, var(--r-green) 0%, var(--r-green-dark) 100%);
+            color: white;
+            padding: 22px 50px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 96, 57, 0.3);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 45px rgba(0, 96, 57, 0.4);
+        }
+
+        .btn-main::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.2), rgba(255,255,255,0));
+            transform: rotate(45deg);
+            transition: 0.8s;
+            left: -100%;
+        }
+
+        .btn-main:hover::after { left: 100%; }
+
+        /* --- CATÁLOGO APP STYLE --- */
+        section { padding: 100px 8%; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 { font-family: 'Cinzel', serif; font-size: 2.8rem; color: var(--r-green); }
+
+        .catalog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
 
         .card {
             background: var(--white);
-            border-radius: 25px;
+            border-radius: 30px;
             overflow: hidden;
-            box-shadow: var(--shadow-lux);
-            transition: all 0.4s ease;
-            border: 1px solid #eee;
-            position: relative;
+            box-shadow: var(--shadow-premium);
+            transition: 0.5s;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .card:hover { transform: translateY(-10px); border-color: var(--rolex-gold); }
+        .card:hover { transform: translateY(-15px); }
 
-        .card-img { width: 100%; height: 280px; object-fit: cover; }
+        .card-img { width: 100%; height: 350px; object-fit: cover; }
 
-        .card-info { padding: 25px; text-align: center; }
+        .card-content { padding: 30px; text-align: center; }
 
-        .card-info h3 { font-family: 'Cinzel', serif; font-size: 1.4rem; margin-bottom: 10px; }
+        .card-content h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 10px; }
 
-        .price-tag {
-            color: var(--rolex-green);
-            font-weight: 700;
-            font-size: 1.5rem;
+        .card-price {
+            font-size: 1.8rem;
+            color: var(--r-green);
+            font-weight: 800;
             margin: 15px 0;
             display: block;
         }
 
-        /* BOTON WHATSAPP POR OPCION */
-        .select-btn {
-            background: var(--rolex-green);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 600;
-            transition: 0.3s;
-            border: none;
+        /* --- APARTADO DESPLEGABLE (REFERENCIAS) --- */
+        .references-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: var(--white);
+            border-radius: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-premium);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 25px 40px;
             cursor: pointer;
-            width: 100%;
-        }
-
-        .select-btn:hover { background: var(--rolex-gold); }
-
-        /* --- HORARIOS DISEÑO IPHONE --- */
-        .schedule-card {
-            background: var(--rolex-green);
-            color: white;
-            border-radius: 30px;
-            padding: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            box-shadow: 0 30px 60px rgba(0, 96, 57, 0.2);
-        }
-
-        .schedule-item {
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding: 15px 0;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            transition: 0.3s;
         }
 
-        /* --- ANIMACIONES --- */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .accordion-header h3 { font-family: 'Cinzel', serif; color: var(--r-green); }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 0 40px;
         }
 
-        /* --- AJUSTES PARA TELEFONO (VISION APP) --- */
+        .accordion-content img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .accordion-content img:hover { transform: scale(1.05); }
+
+        /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 768px) {
-            .catalog-container {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                padding-bottom: 30px;
-                gap: 20px;
-                margin: 0 -5%;
-                padding-left: 5%;
-            }
-
-            .card {
-                min-width: 85vw;
-                scroll-snap-align: center;
-            }
-
-            .hero { height: 80vh; }
-            .hero-content h1 { font-size: 2.5rem; }
-            
-            /* Indicador de scroll horizontal */
-            .catalog-container::-webkit-scrollbar { display: none; }
+            .hero-card { padding: 40px 20px; border-radius: 30px; }
+            .hero-card h1 { font-size: 2.2rem; }
+            .accordion-content { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+            .catalog-grid { display: flex; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory; }
+            .card { min-width: 85vw; scroll-snap-align: center; }
+            nav { padding: 12px 20px; }
         }
 
-        /* --- FLOAT WHATSAPP --- */
-        .whatsapp-main {
+        /* --- WHATSAPP FLOAT --- */
+        .wa-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 30px;
+            right: 30px;
             background: #25d366;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            z-index: 999;
+            font-size: 32px;
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+            z-index: 2000;
             text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Elite Barber</div>
-        <div style="display: flex; gap: 15px;">
-            <i class="fa-solid fa-bars" style="color: var(--rolex-green); font-size: 1.2rem;"></i>
-        </div>
+        <div class="logo">ELITE BARBER STUDIO</div>
+        <div style="color: var(--r-green); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px;">MODO VIP</div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <p>The Art of Grooming</p>
-            <h1>Impecable. <br>Elegante. <br>Único.</h1>
-            <a href="#catalogo" class="select-btn" style="width: auto; padding: 18px 40px; font-size: 1rem;">VER CATÁLOGO</a>
+        <div class="hero-card">
+            <p>Rápido · Exclusivo · Profesional</p>
+            <h1>Agenda tu cita en menos de 60 segundos</h1>
+            <div class="steps-box">
+                <div class="step">1. Elige día</div>
+                <div class="step">2. Elige hora</div>
+                <div class="step">3. Elige corte</div>
+                <div class="step">4. ¡Listo!</div>
+            </div>
+            <a href="javascript:void(0)" onclick="scrollToSection('catalogo')" class="btn-main">COMENZAR RESERVA</a>
         </div>
     </header>
 
     <section id="catalogo">
-        <div class="section-header">
+        <div class="section-title">
             <h2>Nuestros Servicios</h2>
-            <p style="color: var(--rolex-gold);">Desliza para elegir tu transformación</p>
+            <p>Selecciona tu estilo Rolex Signature</p>
         </div>
 
-        <div class="catalog-container">
+        <div class="catalog-grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1599351431247-f10b21816381?auto=format&fit=crop&q=80" class="card-img" alt="Executive Fade">
-                <div class="card-info">
+                <img src="https://images.unsplash.com/photo-1599351431247-f10b21816381?auto=format&fit=crop&q=80" class="card-img">
+                <div class="card-content">
                     <h3>Executive Fade</h3>
-                    <span class="price-tag">$250 MXN</span>
-                    <button class="select-btn" onclick="sendWhatsApp('Executive Fade', '250')">ELEGIR ESTE CORTE</button>
+                    <span class="card-price">$350 MXN</span>
+                    <button onclick="booking('Executive Fade', '350')" class="btn-main" style="width: 100%; padding: 15px;">ELEGIR SERVICIO</button>
                 </div>
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80" class="card-img" alt="Royal Shave">
-                <div class="card-info">
-                    <h3>Royal Shave</h3>
-                    <span class="price-tag">$180 MXN</span>
-                    <button class="select-btn" onclick="sendWhatsApp('Royal Shave', '180')">ELEGIR ESTE CORTE</button>
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80" class="card-img">
+                <div class="card-content">
+                    <h3>Beard & Crown</h3>
+                    <span class="card-price">$450 MXN</span>
+                    <button onclick="booking('Beard & Crown', '450')" class="btn-main" style="width: 100%; padding: 15px;">ELEGIR SERVICIO</button>
                 </div>
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80" class="card-img" alt="Full Elite">
-                <div class="card-info">
-                    <h3>Full Elite Experience</h3>
-                    <span class="price-tag">$450 MXN</span>
-                    <button class="select-btn" onclick="sendWhatsApp('Full Elite Experience', '450')">ELEGIR ESTE CORTE</button>
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80" class="card-img">
+                <div class="card-content">
+                    <h3>Luxury Ritual</h3>
+                    <span class="card-price">$600 MXN</span>
+                    <button onclick="booking('Luxury Ritual', '600')" class="btn-main" style="width: 100%; padding: 15px;">ELEGIR SERVICIO</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="horarios">
-        <div class="schedule-card">
-            <div>
-                <h2 style="font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 20px;">Horarios de Cortes</h2>
-                <p style="opacity: 0.8; margin-bottom: 30px;">Reserva tu espacio con antelación para asegurar tu lugar en el trono.</p>
-                <div class="schedule-item"><span>Lunes - Viernes</span> <span>09:00 - 21:00</span></div>
-                <div class="schedule-item"><span>Sábados</span> <span>10:00 - 18:00</span></div>
-                <div class="schedule-item"><span>Domingos</span> <span>Cerrado</span></div>
-            </div>
-            <div style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 25px;">
-                <h3 style="font-family: 'Cinzel', serif; color: var(--rolex-gold);">Último Turno</h3>
-                <p style="margin-top: 15px;">Para servicios completos de Barba + Corte, el último acceso es a las <strong>20:15 PM</strong>.</p>
+    <section id="referencias">
+        <div class="references-container">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion()">
+                    <h3>VER GALERÍA DE TRABAJOS (REFERENCIAS)</h3>
+                    <i class="fas fa-chevron-down" id="acc-icon" style="color: var(--r-gold); transition: 0.3s;"></i>
+                </div>
+                <div class="accordion-content" id="acc-content">
+                    <img src="https://images.unsplash.com/photo-1593702288056-f6b8f3f3c5f9?auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1622286332618-f2803b414273?auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80">
+                    <img src="https://images.unsplash.com/photo-1536520142421-41e179c3d262?auto=format&fit=crop&q=80">
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="ubicacion">
-        <div class="section-header">
-            <h2>Ubicación</h2>
-            <p>San Pedro Garza García, NL.</p>
+    <section id="horarios" style="background: var(--r-green); color: white; border-radius: 50px 50px 0 0;">
+        <div class="section-title">
+            <h2 style="color: white;">Horarios Elite</h2>
         </div>
-        <div style="height: 300px; width: 100%; border-radius: 30px; overflow: hidden; filter: grayscale(1) contrast(1.2);">
-            <iframe src="https://www.google.com/maps/embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px 0;">Lunes a Viernes: <strong>10:00 AM - 08:00 PM</strong></p>
+            <p style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px 0;">Sábados: <strong>09:00 AM - 06:00 PM</strong></p>
+            <p style="padding: 15px 0; color: var(--r-gold);">Domingos: <strong>Cerrado</strong></p>
         </div>
     </section>
 
-    <footer style="background: var(--rolex-green); color: white; padding: 50px 5%; text-align: center;">
-        <div class="logo" style="color: white; margin-bottom: 20px;">Elite Barber</div>
-        <p style="opacity: 0.6; font-size: 0.8rem;">© 2026 Crafted for Gentlemen. Inspired by Excellence.</p>
+    <footer style="text-align: center; padding: 40px; background: #004d2e; color: white; font-size: 0.8rem;">
+        <p>© 2026 Elite Barber Studio. Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/521234567890" class="whatsapp-main" target="_blank">
+    <a href="https://wa.me/521234567890" class="wa-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        function sendWhatsApp(servicio, precio) {
-            const numero = "521234567890"; // Reemplaza con tu número real
-            const mensaje = `Hola! Vi su catálogo web y quiero agendar una cita para el servicio: *${servicio}* ($${precio}). ¿Tienen disponibilidad para mañana?`;
-            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
+        function toggleAccordion() {
+            const content = document.getElementById('acc-content');
+            const icon = document.getElementById('acc-icon');
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.style.paddingTop = "0";
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                content.style.maxHeight = "1000px";
+                content.style.paddingTop = "25px";
+                icon.style.transform = "rotate(180deg)";
+            }
         }
 
-        // Revelación de elementos al scroll
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        }, observerOptions);
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
 
-        document.querySelectorAll('.card').forEach(card => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
-            card.style.transition = "all 0.8s ease-out";
-            observer.observe(card);
-        });
+        function booking(servicio, precio) {
+            const numero = "521234567890"; // Cambiar por tu número real
+            const msj = `Hola Elite Barber! Me gustaría agendar una cita.%0A%0A*Servicio:* ${servicio}%0A*Precio:* $${precio}%0A*Día:* [Escribe el día]%0A*Hora:* [Escribe la hora]`;
+            window.open(`https://wa.me/${numero}?text=${msj}`, '_blank');
+        }
     </script>
 </body>
 </html>
