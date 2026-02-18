@@ -3,143 +3,330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barbería Moderna</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Black Crown Barber Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --gold:#c6a75e;
+  --dark:#0f0f0f;
+  --card:#1a1a1a;
+  --soft:#bfbfbf;
+}
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-    background:#111;
-    color:#fff;
-    overflow-x:hidden;
+  font-family:'Poppins',sans-serif;
+  background:var(--dark);
+  color:white;
+  overflow-x:hidden;
 }
+
+/* NAV */
+
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+nav h2{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-weight:700;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:0.9rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* HERO */
 
 header{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-    url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+  url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
 }
 
-h1{
-    font-size:2.5rem;
-    font-weight:700;
-    animation:fadeDown 1.5s ease;
+header h1{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  max-width:700px;
+  animation:fadeDown 1.5s ease;
 }
 
-.sub{
-    margin-top:15px;
-    font-size:1.1rem;
-    opacity:.8;
-    animation:fadeUp 1.5s ease;
+header p{
+  margin-top:20px;
+  color:var(--soft);
+  font-size:1.1rem;
+  animation:fadeUp 1.5s ease;
 }
 
 .btn{
-    margin-top:30px;
-    padding:15px 30px;
-    background:#c59d5f;
-    color:#000;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:600;
-    transition:.3s;
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
+  margin-top:35px;
+  padding:15px 35px;
+  background:var(--gold);
+  color:black;
+  text-decoration:none;
+  border-radius:40px;
+  font-weight:600;
+  transition:0.3s;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
 .btn:hover{
-    transform:scale(1.05);
-    background:#e6b86c;
+  transform:scale(1.08);
+  background:#e6c57a;
 }
+
+/* SECTIONS */
 
 section{
-    padding:70px 20px;
-    text-align:center;
+  padding:90px 8%;
 }
 
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    margin-top:40px;
+section h2{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  margin-bottom:50px;
+  font-size:2rem;
+}
+
+/* CATALOGO */
+
+.catalogo{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
 
 .card{
-    background:#1c1c1c;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,.5);
-    transition:.4s;
+  background:var(--card);
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:25px;
+}
+
+.card-content h3{
+  margin-bottom:10px;
 }
 
 .price{
-    margin-top:10px;
-    font-size:1.3rem;
-    color:#c59d5f;
+  color:var(--gold);
+  font-size:1.2rem;
+  margin-top:10px;
 }
 
-.hours{
-    background:#1a1a1a;
+/* HORARIOS */
+
+.horarios{
+  background:#141414;
+  text-align:center;
+  border-radius:15px;
+  padding:40px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
-footer{
-    background:#000;
-    padding:20px;
-    text-align:center;
-    font-size:.9rem;
-    opacity:.6;
+.horarios p{
+  margin:8px 0;
+  color:var(--soft);
 }
+
+/* MAPA */
+
+iframe{
+  width:100%;
+  height:300px;
+  border-radius:15px;
+  border:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* WHATSAPP FLOAT */
 
 .whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:#fff;
-    padding:15px 20px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    box-shadow:0 5px 15px rgba(0,0,0,.4);
-    transition:.3s;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px 22px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+  transition:0.3s;
 }
 
 .whatsapp:hover{
-    transform:scale(1.1);
+  transform:scale(1.1);
 }
 
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:black;
+  font-size:0.9rem;
+  color:#888;
+}
+
+/* ANIMATIONS */
+
 @keyframes fadeDown{
-    from{opacity:0; transform:translateY(-30px);}
-    to{opacity:1; transform:translateY(0);}
+  from{opacity:0; transform:translateY(-40px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 @keyframes fadeUp{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+  header h1{
+    font-size:2.1rem;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+  <h2>Black Crown</h2>
+  <div>
+    <a href="#servicios">Servicios</a>
+    <a href="#horarios">Horarios</a>
+    <a href="#ubicacion">Ubicación</a>
+  </div>
+</nav>
+
 <header>
-    <h1>Reserva tu corte en menos de 1 minuto.</h1>
-    <p class="sub">Barbería moderna · Estilo · Precisión</p>
-    <a href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20corte%20fade%20para%20mañana%20a%20las%206pm." 
-       class="btn" target="_blank">Reservar Aho_
+  <h1>Reserva tu corte en menos de 1 minuto.</h1>
+  <p>Barbería moderna · Precisión · Estilo premium</p>
+  <a href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20corte%20fade%20para%20mañana%20a%20las%206pm." target="_blank" class="btn">
+    Reservar por WhatsApp
+  </a>
+</header>
+
+<section id="servicios">
+  <h2>Catálogo de Servicios</h2>
+
+  <div class="catalogo">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517832606294-7e0d6b8d8f33">
+      <div class="card-content">
+        <h3>Corte Clásico</h3>
+        <p>Corte tradicional con acabado limpio y elegante.</p>
+        <div class="price">$12</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1593702288056-f6b8f3f3c5f9">
+      <div class="card-content">
+        <h3>Fade</h3>
+        <p>Degradado moderno con precisión profesional.</p>
+        <div class="price">$18</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+      <div class="card-content">
+        <h3>Corte + Barba</h3>
+        <p>Perfilado de barba + corte personalizado.</p>
+        <div class="price">$25</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1">
+      <div class="card-content">
+        <h3>Diseño</h3>
+        <p>Diseños personalizados y detalles artísticos.</p>
+        <div class="price">$22</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="horarios">
+  <h2>Horarios de Atención</h2>
+  <div class="horarios">
+    <p>Lunes a Viernes: 10:00 AM – 8:00 PM</p>
+    <p>Sábados: 9:00 AM – 6:00 PM</p>
+    <p>Domingos: Cerrado</p>
+  </div>
+</section>
+
+<section id="ubicacion">
+  <h2>Ubicación</h2>
+  <iframe src="https://www.google.com/maps?q=Ciudad+de+Mexico&output=embed"></iframe>
+</section>
+
+<a href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20corte%20fade%20para%20mañana%20a%20las%206pm." 
+   class="whatsapp" target="_blank">
+   WhatsApp
+</a>
+
+<footer>
+© 2026 Black Crown Barber Studio · Diseño demostración
+</footer>
+
+</body>
+</html>
