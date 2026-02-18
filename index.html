@@ -1,332 +1,416 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Black Crown Barber Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Crown Barber Studio | Estilo & Precisión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f1d592;
+            --dark: #0a0a0a;
+            --dark-soft: #161616;
+            --white: #ffffff;
+            --gray: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
 
-<style>
-:root{
-  --gold:#c6a75e;
-  --dark:#0f0f0f;
-  --card:#1a1a1a;
-  --soft:#bfbfbf;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-html{
-  scroll-behavior:smooth;
-}
+        /* --- NAVEGACIÓN --- */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
 
-body{
-  font-family:'Poppins',sans-serif;
-  background:var(--dark);
-  color:white;
-  overflow-x:hidden;
-}
+        .logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-/* NAV */
+        nav .links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
 
-nav{
-  position:fixed;
-  width:100%;
-  top:0;
-  left:0;
-  padding:15px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
+        nav .links a:hover {
+            color: var(--gold);
+        }
 
-nav h2{
-  font-family:'Playfair Display',serif;
-  color:var(--gold);
-  font-weight:700;
-}
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:25px;
-  font-size:0.9rem;
-  transition:0.3s;
-}
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
 
-nav a:hover{
-  color:var(--gold);
-}
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
 
-/* HERO */
+        .cta-button {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 18px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
 
-header{
-  height:100vh;
-  background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-  url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1');
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-}
+        .cta-button:hover {
+            background: var(--gold-light);
+            transform: translateY(-5px);
+        }
 
-header h1{
-  font-family:'Playfair Display',serif;
-  font-size:3rem;
-  max-width:700px;
-  animation:fadeDown 1.5s ease;
-}
+        /* --- SECCIONES COMUNES --- */
+        section {
+            padding: 100px 8%;
+        }
 
-header p{
-  margin-top:20px;
-  color:var(--soft);
-  font-size:1.1rem;
-  animation:fadeUp 1.5s ease;
-}
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+        }
 
-.btn{
-  margin-top:35px;
-  padding:15px 35px;
-  background:var(--gold);
-  color:black;
-  text-decoration:none;
-  border-radius:40px;
-  font-weight:600;
-  transition:0.3s;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-.btn:hover{
-  transform:scale(1.08);
-  background:#e6c57a;
-}
+        /* --- CATÁLOGO DE SERVICIOS --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
 
-/* SECTIONS */
+        .service-card {
+            background: var(--dark-soft);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
 
-section{
-  padding:90px 8%;
-}
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+        }
 
-section h2{
-  text-align:center;
-  font-family:'Playfair Display',serif;
-  margin-bottom:50px;
-  font-size:2rem;
-}
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+        }
 
-/* CATALOGO */
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
 
-.catalogo{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-}
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
 
-.card{
-  background:var(--card);
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-  transition:0.4s;
-}
+        .service-info {
+            padding: 25px;
+            text-align: center;
+        }
 
-.card:hover{
-  transform:translateY(-10px);
-}
+        .service-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
 
-.card img{
-  width:100%;
-  height:250px;
-  object-fit:cover;
-}
+        .service-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
 
-.card-content{
-  padding:25px;
-}
+        .price-tag {
+            font-size: 1.3rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
 
-.card-content h3{
-  margin-bottom:10px;
-}
+        /* --- HORARIOS Y CORTES --- */
+        .info-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
 
-.price{
-  color:var(--gold);
-  font-size:1.2rem;
-  margin-top:10px;
-}
+        .info-box {
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
 
-/* HORARIOS */
+        .info-box h3 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.horarios{
-  background:#141414;
-  text-align:center;
-  border-radius:15px;
-  padding:40px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-}
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
 
-.horarios p{
-  margin:8px 0;
-  color:var(--soft);
-}
+        .highlight-time {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
 
-/* MAPA */
+        /* --- MAPA --- */
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid var(--dark-soft);
+        }
 
-iframe{
-  width:100%;
-  height:300px;
-  border-radius:15px;
-  border:none;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-}
+        /* --- FLOAT WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: 0.3s;
+            text-decoration: none;
+        }
 
-/* WHATSAPP FLOAT */
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
 
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px 22px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:600;
-  box-shadow:0 10px 25px rgba(0,0,0,0.6);
-  transition:0.3s;
-}
+        /* --- FOOTER --- */
+        footer {
+            padding: 50px 8%;
+            background: #050505;
+            text-align: center;
+            border-top: 1px solid var(--dark-soft);
+        }
 
-.whatsapp:hover{
-  transform:scale(1.1);
-}
+        .social-links {
+            margin-bottom: 20px;
+        }
 
-/* FOOTER */
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
 
-footer{
-  text-align:center;
-  padding:30px;
-  background:black;
-  font-size:0.9rem;
-  color:#888;
-}
+        .social-links a:hover {
+            color: var(--gold);
+        }
 
-/* ANIMATIONS */
-
-@keyframes fadeDown{
-  from{opacity:0; transform:translateY(-40px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-  header h1{
-    font-size:2.1rem;
-  }
-}
-</style>
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .info-container { grid-template-columns: 1fr; }
+            nav .links { display: none; }
+            section { padding: 60px 5%; }
+        }
+    </style>
 </head>
-
 <body>
 
-<nav>
-  <h2>Black Crown</h2>
-  <div>
-    <a href="#servicios">Servicios</a>
-    <a href="#horarios">Horarios</a>
-    <a href="#ubicacion">Ubicación</a>
-  </div>
-</nav>
+    <nav>
+        <div class="logo">Black Crown</div>
+        <div class="links">
+            <a href="#servicios">Servicios</a>
+            <a href="#horarios">Horarios</a>
+            <a href="#ubicacion">Ubicación</a>
+        </div>
+    </nav>
 
-<header>
-  <h1>Reserva tu corte en menos de 1 minuto.</h1>
-  <p>Barbería moderna · Precisión · Estilo premium</p>
-  <a href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20corte%20fade%20para%20mañana%20a%20las%206pm." target="_blank" class="btn">
-    Reservar por WhatsApp
-  </a>
-</header>
+    <header class="hero">
+        <h1>Reserva tu corte en menos de 1 minuto.</h1>
+        <p>Expertos en barbería clásica y tendencias modernas. El punto exacto entre tradición y estilo urbano.</p>
+        <a href="https://wa.me/521234567890?text=Hola,%20quiero%20reservar%20un%20corte%20fade%20para%20mañana%20a%20las%206pm." class="cta-button">
+            <i class="fab fa-whatsapp"></i> Reservar Ahora
+        </a>
+    </header>
 
-<section id="servicios">
-  <h2>Catálogo de Servicios</h2>
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80" alt="Corte Clásico">
+                </div>
+                <div class="service-info">
+                    <h3>Corte Clásico</h3>
+                    <p>Tijera y máquina para un look atemporal y profesional.</p>
+                    <div class="price-tag">$15.00</div>
+                </div>
+            </div>
 
-  <div class="catalogo">
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1599351431247-f10b21816381?auto=format&fit=crop&q=80" alt="Fade">
+                </div>
+                <div class="service-info">
+                    <h3>Skin Fade</h3>
+                    <p>Degradado perfecto a la piel con acabado detallado.</p>
+                    <div class="price-tag">$20.00</div>
+                </div>
+            </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1517832606294-7e0d6b8d8f33">
-      <div class="card-content">
-        <h3>Corte Clásico</h3>
-        <p>Corte tradicional con acabado limpio y elegante.</p>
-        <div class="price">$12</div>
-      </div>
-    </div>
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1621594500147-758900600f9a?auto=format&fit=crop&q=80" alt="Barba">
+                </div>
+                <div class="service-info">
+                    <h3>Corte + Barba</h3>
+                    <p>Ritual completo con toalla caliente y perfilado.</p>
+                    <div class="price-tag">$30.00</div>
+                </div>
+            </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1593702288056-f6b8f3f3c5f9">
-      <div class="card-content">
-        <h3>Fade</h3>
-        <p>Degradado moderno con precisión profesional.</p>
-        <div class="price">$18</div>
-      </div>
-    </div>
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80" alt="Diseño">
+                </div>
+                <div class="service-info">
+                    <h3>Diseño Premium</h3>
+                    <p>Líneas y patrones creativos para un estilo único.</p>
+                    <div class="price-tag">$25.00</div>
+                </div>
+            </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-      <div class="card-content">
-        <h3>Corte + Barba</h3>
-        <p>Perfilado de barba + corte personalizado.</p>
-        <div class="price">$25</div>
-      </div>
-    </div>
+        </div>
+    </section>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1">
-      <div class="card-content">
-        <h3>Diseño</h3>
-        <p>Diseños personalizados y detalles artísticos.</p>
-        <div class="price">$22</div>
-      </div>
-    </div>
+    <section id="horarios" style="background-color: #0d0d0d;">
+        <h2 class="section-title">Disponibilidad</h2>
+        <div class="info-container">
+            
+            <div class="info-box">
+                <h3><i class="far fa-clock"></i> Horario de Tienda</h3>
+                <div class="schedule-row"><span>Lunes a Viernes</span> <span class="highlight-time">10:00 - 20:00</span></div>
+                <div class="schedule-row"><span>Sábados</span> <span class="highlight-time">09:00 - 18:00</span></div>
+                <div class="schedule-row"><span>Domingos</span> <span>Cerrado</span></div>
+            </div>
 
-  </div>
-</section>
+            <div class="info-box">
+                <h3><i class="fas fa-cut"></i> Últimos Turnos</h3>
+                <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--gray);">Para garantizar la calidad, el último servicio se inicia en estos horarios:</p>
+                <div class="schedule-row"><span>Corte Completo</span> <span class="highlight-time">19:15</span></div>
+                <div class="schedule-row"><span>Corte + Barba</span> <span class="highlight-time">18:45</span></div>
+                <div class="schedule-row"><span>Día Sábado</span> <span class="highlight-time">17:15</span></div>
+            </div>
 
-<section id="horarios">
-  <h2>Horarios de Atención</h2>
-  <div class="horarios">
-    <p>Lunes a Viernes: 10:00 AM – 8:00 PM</p>
-    <p>Sábados: 9:00 AM – 6:00 PM</p>
-    <p>Domingos: Cerrado</p>
-  </div>
-</section>
+        </div>
+    </section>
 
-<section id="ubicacion">
-  <h2>Ubicación</h2>
-  <iframe src="https://www.google.com/maps?q=Ciudad+de+Mexico&output=embed"></iframe>
-</section>
+    <section id="ubicacion">
+        <h2 class="section-title">Nuestra Ubicación</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.539597034179!2d-99.165083!3d19.42702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzM3LjMiTiA5OcKwMDknNTQuMyJX!5e0!3m2!1ses!2smx!4v1645123456789!5m2!1ses!2smx" 
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <p style="text-align: center; margin-top: 20px; color: var(--gray);">Av. Principal 123, Colonia Centro - El Arte de la Barbería.</p>
+    </section>
 
-<a href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20corte%20fade%20para%20mañana%20a%20las%206pm." 
-   class="whatsapp" target="_blank">
-   WhatsApp
-</a>
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p>&copy; 2026 Black Crown Barber Studio. Todos los derechos reservados.</p>
+    </footer>
 
-<footer>
-© 2026 Black Crown Barber Studio · Diseño demostración
-</footer>
+    <a href="https://wa.me/521234567890?text=Hola,%20quiero%20reservar%20un%20corte%20fade%20para%20mañana%20a%20las%206pm." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
