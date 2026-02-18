@@ -3,401 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Barber Studio | Rolex Signature</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Elite Barber Studio | Rolex Signature Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --r-green: #006039; /* Rolex Green */
-            --r-green-dark: #004d2e;
-            --r-gold: #a37e2c; /* Rolex Gold */
-            --r-gold-light: #d4af37;
+            --r-green: #006039; 
+            --r-green-dark: #004529;
+            --r-gold: #a37e2c;
+            --r-gold-light: #c5a059;
             --white: #ffffff;
-            --ivory: #fcfaf5;
-            --glass: rgba(255, 255, 255, 0.9);
-            --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            --ivory: #f8f6f2;
+            --text: #1c1c1c;
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
+            --shadow-hard: 0 20px 40px rgba(0,0,0,0.12);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
-
+        /* Reset y Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--ivory);
-            color: #1a1a1a;
-            line-height: 1.6;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png"); /* Textura papel */
+            color: var(--text);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* --- NAVEGACIÓN ESTILO CRISTAL --- */
+        /* Navegación de Alta Gama */
         nav {
             position: fixed;
-            width: 92%;
-            left: 4%;
-            top: 20px;
+            width: 100%;
+            top: 0;
             z-index: 1000;
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            padding: 15px 30px;
+            padding: 25px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-radius: 100px;
-            border: 1px solid rgba(163, 126, 44, 0.2);
-            box-shadow: var(--shadow-premium);
+            background: rgba(255, 255, 255, 0.01);
+            transition: 0.5s;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 8%;
+            box-shadow: var(--shadow-soft);
         }
 
         .logo {
             font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
-            background: linear-gradient(to right, var(--r-green), var(--r-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            color: var(--r-green);
         }
 
-        /* --- HERO: IMPACTO TOTAL --- */
+        /* Hero Moderno */
         .hero {
             height: 100vh;
-            background: 
-                linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)),
-                url('https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80');
             background-size: cover;
             background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 5%;
-            position: relative;
-        }
-
-        .hero-card {
-            background: var(--glass);
-            padding: 50px 30px;
-            border-radius: 40px;
-            max-width: 800px;
+            background-attachment: fixed;
             text-align: center;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
-            border: 1px solid white;
-            animation: heroFade 1.2s ease-out;
-        }
-
-        @keyframes heroFade {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .hero-card h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.2rem, 6vw, 4rem);
-            color: var(--r-green);
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero-card p {
-            font-weight: 600;
-            color: var(--r-gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .steps-box {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .step {
-            background: var(--ivory);
-            padding: 10px 20px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            border: 1px dashed var(--r-gold);
-        }
-
-        /* --- BOTONES CON BRILLO --- */
-        .btn-main {
-            background: linear-gradient(135deg, var(--r-green) 0%, var(--r-green-dark) 100%);
             color: white;
-            padding: 22px 50px;
+            padding: 0 20px;
+        }
+
+        .hero-content { max-width: 900px; animation: fadeInUp 1.5s ease; }
+        .hero-content span { font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--r-gold-light); }
+        .hero-content h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 5rem); margin: 20px 0; font-weight: 700; line-height: 1; }
+        
+        .cta-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
             border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-top: 40px;
+        }
+
+        /* Botones Profesionales */
+        .btn-gold {
+            background: linear-gradient(135deg, var(--r-gold) 0%, var(--r-gold-light) 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 5px;
             text-decoration: none;
-            font-weight: 800;
+            font-weight: 700;
+            letter-spacing: 2px;
             display: inline-block;
             transition: 0.4s;
-            position: relative;
+            box-shadow: 0 10px 20px rgba(163, 126, 44, 0.3);
+        }
+
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(163, 126, 44, 0.5); }
+
+        /* Secciones */
+        section { padding: 120px 10%; }
+        .section-tag { color: var(--r-gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; display: block; text-align: center; margin-bottom: 15px; }
+        .section-title { font-family: 'Cinzel', serif; font-size: 3rem; text-align: center; margin-bottom: 60px; color: var(--r-green); }
+
+        /* Catálogo Grid */
+        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .service-card {
+            background: white;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 96, 57, 0.3);
-        }
-
-        .btn-main:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 20px 45px rgba(0, 96, 57, 0.4);
-        }
-
-        .btn-main::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.2), rgba(255,255,255,0));
-            transform: rotate(45deg);
-            transition: 0.8s;
-            left: -100%;
-        }
-
-        .btn-main:hover::after { left: 100%; }
-
-        /* --- CATÁLOGO APP STYLE --- */
-        section { padding: 100px 8%; }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 { font-family: 'Cinzel', serif; font-size: 2.8rem; color: var(--r-green); }
-
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: var(--shadow-premium);
             transition: 0.5s;
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            position: relative;
         }
+        .service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hard); }
+        .service-img { width: 100%; height: 400px; object-fit: cover; filter: sepia(20%); transition: 0.5s; }
+        .service-card:hover .service-img { filter: sepia(0%); }
+        .service-info { padding: 30px; text-align: center; }
+        .service-info h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 10px; }
+        .price { font-size: 1.4rem; color: var(--r-green); font-weight: 400; display: block; margin-bottom: 20px; }
 
-        .card:hover { transform: translateY(-15px); }
-
-        .card-img { width: 100%; height: 350px; object-fit: cover; }
-
-        .card-content { padding: 30px; text-align: center; }
-
-        .card-content h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 10px; }
-
-        .card-price {
-            font-size: 1.8rem;
-            color: var(--r-green);
-            font-weight: 800;
-            margin: 15px 0;
-            display: block;
-        }
-
-        /* --- APARTADO DESPLEGABLE (REFERENCIAS) --- */
-        .references-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .accordion-item {
-            background: var(--white);
-            border-radius: 25px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-premium);
-            overflow: hidden;
-        }
-
-        .accordion-header {
-            padding: 25px 40px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--white);
-            transition: 0.3s;
-        }
-
-        .accordion-header h3 { font-family: 'Cinzel', serif; color: var(--r-green); }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
+        /* Apartado Referencias (Portafolio) */
+        .references { background: var(--white); }
+        .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            padding: 0 40px;
+            max-height: 600px;
+            overflow: hidden;
+            transition: max-height 1s ease-in-out;
         }
+        .portfolio-grid.expanded { max-height: 2000px; }
+        .portfolio-item { position: relative; overflow: hidden; height: 300px; }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .portfolio-item:hover img { transform: scale(1.1); }
 
-        .accordion-content img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            transition: 0.3s;
+        /* Ubicación & Mapa */
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: white;
+            box-shadow: var(--shadow-hard);
+            border-radius: 20px;
+            overflow: hidden;
         }
+        .location-info { padding: 60px; background: var(--r-green); color: white; }
+        .map-box { min-height: 400px; background: #e5e3df; }
 
-        .accordion-content img:hover { transform: scale(1.05); }
+        /* Footer */
+        footer { padding: 80px 10% 40px; background: #1a1a1a; color: #888; text-align: center; }
 
-        /* --- MOBILE OPTIMIZATION --- */
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero-card { padding: 40px 20px; border-radius: 30px; }
-            .hero-card h1 { font-size: 2.2rem; }
-            .accordion-content { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
-            .catalog-grid { display: flex; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory; }
-            .card { min-width: 85vw; scroll-snap-align: center; }
-            nav { padding: 12px 20px; }
+            .location-container { grid-template-columns: 1fr; }
+            .section-title { font-size: 2.2rem; }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            nav { padding: 20px 5%; }
+            .hero-content h1 { font-size: 3rem; }
         }
 
-        /* --- WHATSAPP FLOAT --- */
-        .wa-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 32px;
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-            z-index: 2000;
-            text-decoration: none;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">ELITE BARBER STUDIO</div>
-        <div style="color: var(--r-green); font-weight: 800; font-size: 0.8rem; letter-spacing: 1px;">MODO VIP</div>
+    <nav id="navbar">
+        <div class="logo">ELITE STUDIO</div>
+        <div class="menu-icon"><i class="fa-solid fa-ellipsis-vertical" style="color: var(--r-gold);"></i></div>
     </nav>
 
     <header class="hero">
-        <div class="hero-card">
-            <p>Rápido · Exclusivo · Profesional</p>
-            <h1>Agenda tu cita en menos de 60 segundos</h1>
-            <div class="steps-box">
-                <div class="step">1. Elige día</div>
-                <div class="step">2. Elige hora</div>
-                <div class="step">3. Elige corte</div>
-                <div class="step">4. ¡Listo!</div>
+        <div class="hero-content">
+            <span>The Gold Standard in Grooming</span>
+            <h1>Corte de Autor & Barbería Fina</h1>
+            <div class="cta-box">
+                <p style="margin-bottom: 20px; font-weight: 300; letter-spacing: 1px;">Dinos día, hora y estilo. Nosotros nos encargamos del resto.</p>
+                <a href="#booking" class="btn-gold">AGENDAR EN 60s</a>
             </div>
-            <a href="javascript:void(0)" onclick="scrollToSection('catalogo')" class="btn-main">COMENZAR RESERVA</a>
         </div>
     </header>
 
-    <section id="catalogo">
-        <div class="section-title">
-            <h2>Nuestros Servicios</h2>
-            <p>Selecciona tu estilo Rolex Signature</p>
-        </div>
-
-        <div class="catalog-grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599351431247-f10b21816381?auto=format&fit=crop&q=80" class="card-img">
-                <div class="card-content">
+    <section id="catalog-section">
+        <span class="section-tag">Colección Signature</span>
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="catalog">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80" class="service-img">
+                <div class="service-info">
                     <h3>Executive Fade</h3>
-                    <span class="card-price">$350 MXN</span>
-                    <button onclick="booking('Executive Fade', '350')" class="btn-main" style="width: 100%; padding: 15px;">ELEGIR SERVICIO</button>
+                    <span class="price">$35.00</span>
+                    <button onclick="book('Executive Fade', '35')" class="btn-gold" style="width: 100%; border-radius: 0;">RESERVAR</button>
                 </div>
             </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80" class="card-img">
-                <div class="card-content">
-                    <h3>Beard & Crown</h3>
-                    <span class="card-price">$450 MXN</span>
-                    <button onclick="booking('Beard & Crown', '450')" class="btn-main" style="width: 100%; padding: 15px;">ELEGIR SERVICIO</button>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1599351431247-f10b21816381?auto=format&fit=crop&q=80" class="service-img">
+                <div class="service-info">
+                    <h3>Imperial Beard</h3>
+                    <span class="price">$25.00</span>
+                    <button onclick="book('Imperial Beard', '25')" class="btn-gold" style="width: 100%; border-radius: 0;">RESERVAR</button>
                 </div>
             </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80" class="card-img">
-                <div class="card-content">
-                    <h3>Luxury Ritual</h3>
-                    <span class="card-price">$600 MXN</span>
-                    <button onclick="booking('Luxury Ritual', '600')" class="btn-main" style="width: 100%; padding: 15px;">ELEGIR SERVICIO</button>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80" class="service-img">
+                <div class="service-info">
+                    <h3>The Royal Ritual</h3>
+                    <span class="price">$55.00</span>
+                    <button onclick="book('The Royal Ritual', '55')" class="btn-gold" style="width: 100%; border-radius: 0;">RESERVAR</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="referencias">
-        <div class="references-container">
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion()">
-                    <h3>VER GALERÍA DE TRABAJOS (REFERENCIAS)</h3>
-                    <i class="fas fa-chevron-down" id="acc-icon" style="color: var(--r-gold); transition: 0.3s;"></i>
+    <section class="references">
+        <span class="section-tag">Portafolio</span>
+        <h2 class="section-title">Trabajos Recientes</h2>
+        <div class="portfolio-grid" id="portfolio">
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1593702288056-f6b8f3f3c5f9?auto=format&fit=crop&q=80"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1622286332618-f2803b414273?auto=format&fit=crop&q=80"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1536520142421-41e179c3d262?auto=format&fit=crop&q=80"></div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <button onclick="togglePortfolio()" id="btn-more" class="btn-gold" style="background: transparent; border: 1px solid var(--r-gold); color: var(--r-gold);">VER TODAS LAS REFERENCIAS</button>
+        </div>
+    </section>
+
+    <section id="location">
+        <div class="location-container">
+            <div class="location-info">
+                <span style="color: var(--r-gold-light); letter-spacing: 2px;">VISÍTANOS</span>
+                <h2 style="font-family: 'Cinzel', serif; font-size: 2.5rem; margin: 20px 0;">Elite HQ</h2>
+                <p style="opacity: 0.8; margin-bottom: 30px;">Calle Lujo #123, Distrito de la Moda.<br>Ciudad Elite, 90210.</p>
+                <div style="margin-bottom: 30px;">
+                    <p><strong>L - V:</strong> 10:00 - 20:00</p>
+                    <p><strong>S:</strong> 09:00 - 18:00</p>
                 </div>
-                <div class="accordion-content" id="acc-content">
-                    <img src="https://images.unsplash.com/photo-1593702288056-f6b8f3f3c5f9?auto=format&fit=crop&q=80">
-                    <img src="https://images.unsplash.com/photo-1622286332618-f2803b414273?auto=format&fit=crop&q=80">
-                    <img src="https://images.unsplash.com/photo-1512690196222-7c74e041bd2e?auto=format&fit=crop&q=80">
-                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80">
-                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80">
-                    <img src="https://images.unsplash.com/photo-1536520142421-41e179c3d262?auto=format&fit=crop&q=80">
-                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn-gold" style="background: white; color: var(--r-green);">COMO LLEGAR</a>
+            </div>
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.642957193294!2d-100.3541249!3d25.6831414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bd893699c80d%3A0xc6a89efb36873551!2sBarberia!5e0!3m2!1ses-419!2smx!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <section id="horarios" style="background: var(--r-green); color: white; border-radius: 50px 50px 0 0;">
-        <div class="section-title">
-            <h2 style="color: white;">Horarios Elite</h2>
-        </div>
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <p style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px 0;">Lunes a Viernes: <strong>10:00 AM - 08:00 PM</strong></p>
-            <p style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px 0;">Sábados: <strong>09:00 AM - 06:00 PM</strong></p>
-            <p style="padding: 15px 0; color: var(--r-gold);">Domingos: <strong>Cerrado</strong></p>
-        </div>
-    </section>
-
-    <footer style="text-align: center; padding: 40px; background: #004d2e; color: white; font-size: 0.8rem;">
-        <p>© 2026 Elite Barber Studio. Todos los derechos reservados.</p>
+    <footer>
+        <p style="font-family: 'Cinzel', serif; color: white; margin-bottom: 20px; font-size: 1.2rem;">ELITE BARBER STUDIO</p>
+        <p>© 2026. Todos los derechos reservados. Diseñado por ProWeb Agency.</p>
     </footer>
 
-    <a href="https://wa.me/521234567890" class="wa-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <script>
-        function toggleAccordion() {
-            const content = document.getElementById('acc-content');
-            const icon = document.getElementById('acc-icon');
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                content.style.paddingTop = "0";
-                icon.style.transform = "rotate(0deg)";
-            } else {
-                content.style.maxHeight = "1000px";
-                content.style.paddingTop = "25px";
-                icon.style.transform = "rotate(180deg)";
-            }
+        // Efecto scroll en Navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Toggle Portfolio
+        function togglePortfolio() {
+            const p = document.getElementById('portfolio');
+            const b = document.getElementById('btn-more');
+            p.classList.toggle('expanded');
+            b.innerText = p.classList.contains('expanded') ? "VER MENOS" : "VER TODAS LAS REFERENCIAS";
         }
 
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function booking(servicio, precio) {
-            const numero = "521234567890"; // Cambiar por tu número real
-            const msj = `Hola Elite Barber! Me gustaría agendar una cita.%0A%0A*Servicio:* ${servicio}%0A*Precio:* $${precio}%0A*Día:* [Escribe el día]%0A*Hora:* [Escribe la hora]`;
-            window.open(`https://wa.me/${numero}?text=${msj}`, '_blank');
+        // WhatsApp Booking
+        function book(service, price) {
+            const phone = "521234567890";
+            const text = `Hola Elite Barber Studio, me gustaría agendar una cita VIP:%0A%0A*Servicio:* ${service}%0A*Costo:* $${price}%0A*Día y Hora:* [Escribe aquí tu preferencia]`;
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
         }
     </script>
 </body>
