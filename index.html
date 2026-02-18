@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbería Moderna</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+header{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+h1{
+    font-size:2.5rem;
+    font-weight:700;
+    animation:fadeDown 1.5s ease;
+}
+
+.sub{
+    margin-top:15px;
+    font-size:1.1rem;
+    opacity:.8;
+    animation:fadeUp 1.5s ease;
+}
+
+.btn{
+    margin-top:30px;
+    padding:15px 30px;
+    background:#c59d5f;
+    color:#000;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    background:#e6b86c;
+}
+
+section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    background:#1c1c1c;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.5);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.price{
+    margin-top:10px;
+    font-size:1.3rem;
+    color:#c59d5f;
+}
+
+.hours{
+    background:#1a1a1a;
+}
+
+footer{
+    background:#000;
+    padding:20px;
+    text-align:center;
+    font-size:.9rem;
+    opacity:.6;
+}
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:#fff;
+    padding:15px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Reserva tu corte en menos de 1 minuto.</h1>
+    <p class="sub">Barbería moderna · Estilo · Precisión</p>
+    <a href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20corte%20fade%20para%20mañana%20a%20las%206pm." 
+       class="btn" target="_blank">Reservar Aho_
